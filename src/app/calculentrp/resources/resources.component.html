@@ -1,0 +1,26 @@
+<fieldset>
+  <legend>Entrer nombre des employées totale :</legend>
+  <label>
+    <input type="text" id="input1" name="input1" [(ngModel)]="resourceData.input1">
+  </label>
+  <br>
+  <label>
+    <legend>Combien d'heures du travail:</legend>
+    <input type="text" id="input2" name="input2" [(ngModel)]="resourceData.input2">
+  </label>
+  <br>
+  <legend>Combien du m2 la taille du votre entreprise :</legend>
+  <label>
+    <input type="text" id="input3" name="input3" [(ngModel)]="resourceData.input3">
+  </label>
+  <legend>combien des PC bureatique existent-ils:</legend>
+  <label>
+    <input type="text" id="input4" name="input4" [(ngModel)]="resourceData.input4">
+  </label>
+  <legend>Combien de centre du climatisation/rechauffement existe :</legend>
+  <label>
+    <input type="text" id="input5" name="input5" [(ngModel)]="resourceData.input5">
+  </label>
+</fieldset>
+
+<button mat-button matStepperNext class="btn btn-success" (click)="submitResourcesData()">Next</button>

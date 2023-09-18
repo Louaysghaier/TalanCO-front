@@ -1,0 +1,74 @@
+<div class="mainapp">
+  <section class="section section-xs section-shaped pb-50">
+    <div class="shape shape-style-1 shape-default">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="container py-lg-md d-flex">
+      <div class="col px-0">
+        <div class="row">
+            <h1 id="headline-52-42" class="ct-headline atomic-primary-heading">
+              <span id="span-606-42" class="ct-span">ALLEZ !!!   Agissez sur l'écosystème par le  calcul du votre empreinte carbonique !</span>
+              
+            </h1>
+                
+            <div class="container ">
+
+              <div class="stepper-container">
+                <mat-stepper orientation="vertical">
+                  <!-- Step 1 -->
+                  <mat-step>
+                    <ng-template matStepLabel>   
+                         <i class="fa fa-user"></i>   infos du travail
+                    </ng-template>
+                    <ng-template matStepContent>
+                      <app-work (workDataEmitter)="onWorkDataEmitted($event)"></app-work>
+                    </ng-template>
+                  </mat-step>
+                  <!-- Step 2 -->
+                  <mat-step>
+                    <ng-template matStepLabel>
+                      <i class="fa fa-cutlery"></i>   alimentation
+                      </ng-template>
+                    <ng-template matStepContent>
+                      <app-alimentation (alimentationDataEmitter)="onAlimentationDataEmitted($event)"></app-alimentation> 
+                      <button mat-button matStepperPrevious>Back</button>
+                      <button mat-button matStepperNext>Next</button>
+                    </ng-template>
+                  </mat-step>
+                  <!-- Step 3 -->
+                  <mat-step>
+                    <ng-template matStepLabel>
+                      <i class="fa fa-bus"></i>   transport</ng-template>
+                    <ng-template matStepContent>
+                      <app-transport (transportDataEmitter)="onTransportDataEmitted($event)"></app-transport> 
+                      <button mat-button matStepperPrevious>Back</button>
+                    </ng-template>
+                  </mat-step>
+                </mat-stepper>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <button type="submit"  class="btn btn-lg w-100 btn-primary my-4"   (click)="submitForm()">>>>>>>> calculer >>>>>>></button>
+      </div>
+     
+  </section>
+</div>
+  <!-- Footer -->
+<div class="underapp">
+ <app-footer></app-footer>
+</div>

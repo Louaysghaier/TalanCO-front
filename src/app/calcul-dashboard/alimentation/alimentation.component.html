@@ -1,0 +1,15 @@
+<form>
+    <fieldset>
+      <legend>Ou passez vous votre pause :</legend>
+      <label>
+        <input type="checkbox" [(ngModel)]="mangeAuSein" (change)="emitAlimentationData()">
+        je mange au sein du mon établissement
+      </label>
+      <br>
+      <label>
+        <input type="checkbox" [(ngModel)]="apportDuDehors" (change)="emitAlimentationData()">
+        j'apport du dehors
+      </label>
+    </fieldset>
+  </form>
+  

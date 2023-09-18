@@ -1,0 +1,22 @@
+<form (submit)="submitTransportData()">
+    <fieldset>
+      <legend>choisir le moyen du transport de la partie majoritaire  du votre enmployées:</legend>
+      <label>
+        <input type="radio" name="option" value="option1" [(ngModel)]="selectedTransportOption">
+        velo
+      </label>
+      <br>
+      <label>
+        <input type="radio" name="option" value="option2" [(ngModel)]="selectedTransportOption">
+         voiture personnelle
+      </label>
+      <br>
+      <label>
+        <input type="radio" name="option" value="option3" [(ngModel)]="selectedTransportOption">
+         transport public
+      </label>
+    </fieldset>
+  
+    <button mat-button class="btn btn-success" type="submit" >Submit</button>
+  </form>
+  

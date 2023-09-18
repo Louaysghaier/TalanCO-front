@@ -1,0 +1,19 @@
+<fieldset>
+
+    <legend>Entrer nombres des mails à consommer par jours :</legend>
+    <label>
+      <input type="text" id="input1" name="input1" [(ngModel)]="input1">
+    </label>
+    <br>
+      <legend>Combien d'heures vous avez utilisé le PC lors du travail:</legend>
+      <input type="text" id="input2" name="input2" [(ngModel)]="input2">
+    <br>
+    <legend>Combien d'heures avezvous utilisé le smartphone lors du travail:</legend>
+    <label>
+      <input type="text" id="input3" name="input3" [(ngModel)]="input3">
+    </label>
+    
+  </fieldset>
+
+  <button mat-button matStepperNext (click)="submitWorkData()"  class="btn btn-success">Next</button>
+  
