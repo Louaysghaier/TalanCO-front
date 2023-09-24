@@ -3,6 +3,9 @@ import * as Chartist from 'chartist';
 import * as Chart from 'chart.js'; 
 import { Bilan } from './Bilan';
 import { BilanService } from './bilan.service';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/login/auth.service';
+
 @Component({
   selector: 'app-monprofil',
   templateUrl: './monprofil.component.html',
@@ -11,10 +14,20 @@ import { BilanService } from './bilan.service';
 export class MonprofilComponent implements OnInit {
   bilan:Bilan;
 
-  constructor(private BilanService: BilanService) { 
+  constructor(private authService: AuthService,private BilanService: BilanService,private router:Router,) { 
   }
+  calculer() {
+    this.authService.getUserData().subscribe((userData) => {
+      const userAuthorities = userData.authorities.map((authority) => authority.authority);
   
-
+      if (userAuthorities.includes("ROLE_Entreprise")) {
+        this.router.navigate(['calculentrp/resource']);
+      } else {
+        this.router.navigate(['calcul/work']); 
+      }
+    });
+  }
+  /******************************* */
   private getBilan() {
     this.BilanService.getBilanList().subscribe(
       (data) => {

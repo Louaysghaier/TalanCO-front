@@ -48,12 +48,12 @@ export class SignupComponent implements OnInit {
                 localStorage.setItem('token', token);
               }
               alert('check your mail account for verification !');
-              this.router.navigate(['calcul/work']); 
+              this.router.navigate(['/']); 
 
             },
             (error) => {
               console.error('Error during registration.', error);
-              alert('Error during registration. Please try again.');
+              alert('check your mail account for verification !');
               this.signupError = 'Error during registration. Please try again.';
             }
           );

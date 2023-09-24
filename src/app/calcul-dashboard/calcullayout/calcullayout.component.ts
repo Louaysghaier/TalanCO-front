@@ -57,7 +57,7 @@ submitForm() {
   );
   
   this.FormService.sumTotal().subscribe();
-  this.router.navigate(['/user_dashboard/monprofil']); 
+  //this.router.navigate(['/user_dashboard/monprofil']); 
 
 }
 

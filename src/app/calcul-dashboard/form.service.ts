@@ -1,4 +1,5 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { AuthService } from '../login/auth.service';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 @Injectable({
@@ -7,25 +8,45 @@ import { Observable } from 'rxjs';
   export class FormService {
     
   
-    constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient,private authService: AuthService) {}
     submitWorkData(workData: any): Observable<any> {
       const url = 'http://localhost:8081/api/works/sum_carbo_works';
-      return this.http.post(url, workData);
+      const token = this.authService.getAuthToken();
+
+      var headers =new HttpHeaders({
+        Authorization: `access ${token}`
+      })
+      return this.http.post(url, workData,{headers});
     }
   
     submitAlimentationData(alimentationData: any): Observable<any> {
       const url = 'http://localhost:8081/api/food/sum_carbo_food';
-      return this.http.post(url, alimentationData);
+      const token = this.authService.getAuthToken();
+
+      var headers =new HttpHeaders({
+        Authorization: `access ${token}`
+      })
+      return this.http.post(url, alimentationData,{headers});
     }
   
     submitTransportData(transportData: any, apiUrl: string): Observable<any> {
-      return this.http.post(apiUrl, transportData);
+      const token = this.authService.getAuthToken();
+
+      var headers =new HttpHeaders({
+        Authorization: `access ${token}`
+      })
+      return this.http.post(apiUrl, transportData,{headers});
     }
+    
     sumTotal() :Observable<any>{
       const url = 'http://localhost:8081/api/Bilan/Sum-Emp';
-      return this.http.get(url);
+      const token = this.authService.getAuthToken();
+  
+      var headers =new HttpHeaders({
+        Authorization: `access ${token}`
+      })
+      return this.http.get(url,{headers});
     } 
-
     
   }
   

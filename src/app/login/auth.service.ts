@@ -24,7 +24,16 @@ export class AuthService {
   private currentUserSubject: BehaviorSubject<any> = new BehaviorSubject(null);
 
 
+  private userDataSubject = new BehaviorSubject<any>(null);
 
+
+  setUserData(userData: any) {
+    this.userDataSubject.next(userData);
+  }
+
+  getUserData(): Observable<any> {
+    return this.userDataSubject.asObservable();
+  }
   
 
   setCurrentUser(user: any) {

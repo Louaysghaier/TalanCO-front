@@ -30,7 +30,9 @@ export class LoginComponent implements OnInit {
       const email = this.user.email;
       const password = this.user.password;
       this.authService.login(email, password, this.rememberMe).subscribe(
-        (response) => {
+        (response) => {      
+              this.authService.setUserData(response); 
+
           console.log('User logged in successfully!');
           const token = response.accessToken;
           if (this.rememberMe) {
@@ -48,9 +50,9 @@ export class LoginComponent implements OnInit {
           
           if (userAuthorities.includes("ROLE_Entreprise")) {
 
-            this.router.navigate(['calculentrp/resource']);
+            this.router.navigate(['user_dashboard/monprofil']);
           } else {
-            this.router.navigate(['calcul/work']); 
+            this.router.navigate(['user_dashboard/monprofil']); 
           }
         
         },

@@ -49,6 +49,6 @@ export class ValidationComponent implements OnInit {
   onButtonClick() {
     if (this.inputDigitLeft = "Let's go!")
     this.isButtonClicked = true;
-    this.router.navigate(['/user_dashboard/monprofil']); 
+    this.router.navigate(['/signin']); 
   }
 }

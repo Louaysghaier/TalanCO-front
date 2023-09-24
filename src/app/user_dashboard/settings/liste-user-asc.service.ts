@@ -7,12 +7,22 @@ import { User } from 'src/app/admin/table-list/user';
   providedIn: 'root'
 })
 export class ListeUserAscService {
+  private baseUserRole  ="http://localhost:8081/api/user/by-role/asc/{roleName}";
 
-  private baseURL  ="http://localhost:8081/api/user/list-Userco2/ASC";
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  getListUserAsc(): Observable<User[]>{
-    return this.httpClient.get<User[]>(this.baseURL);
+  getListUserAsc(): Observable<any[]>{
+    
+    return this.http.get<any[]>("http://localhost:8081/api/user/list-Userco2/ASC");
   }
+
+  
+  getUserByRoles(RolesName:String):Observable<any>{
+    const url = `${this.baseUserRole}`+RolesName;
+    return this.http.get<any>(url);
+  }
+
+
+  
 }

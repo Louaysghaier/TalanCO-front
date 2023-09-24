@@ -13,4 +13,5 @@ export class notificationService {
   getListMessage(): Observable<Message[]>{
     return this.httpClient.get<Message[]>(this.baseURL);
   }
+  
 }

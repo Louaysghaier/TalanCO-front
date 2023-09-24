@@ -268,7 +268,44 @@
                         </th>
                         
                     </thead>
-                    <tbody *ngFor="let user of users">
+                    <tbody *ngFor="let user of user">
+                        <!-- *ngIf="user.roles.name=='ROLE_Employee'"  -->
+                          <tr >
+                              <td>
+                                  {{user.id}}
+                              </td>
+                              <td>
+                                {{user.Name}}
+                            </td>
+                              <td>
+                                {{user.username}}
+                            </td>
+                              <td>
+                                {{user.email}}
+                            </td>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+            </div>
+            <div  class="card-body table-responsive" *ngIf="role === 'ROLE_Entreprise'">
+                <table class="table table-hover">
+                    <thead class="text-warning">
+                        <th>
+                            id
+                        </th>
+                        <th>
+                            name
+                        </th>
+                        <th>
+                            username
+                        </th>
+                        <th>
+                            Email
+                        </th>
+                        
+                    </thead>
+                    <tbody *ngFor="let user of user">
                         <!-- *ngIf="user.roles.name=='ROLE_Employee'"  -->
                           <tr >
                               <td>
