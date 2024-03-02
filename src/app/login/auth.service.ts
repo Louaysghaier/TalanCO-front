@@ -10,9 +10,9 @@ import { Router } from '@angular/router';
 
 export class AuthService {
   //private baseUrl = 'http://localhost:8081/api/auth';
- private signupUrl = 'http://localhost:8081/api/auth/signup/employee';
- private signupUrl1 = 'http://localhost:8081/api/auth/signIn';
- private signupUrl2 = 'http://localhost:8081/api/auth/signup/entreprise';
+ private signupUrl = 'http://localhost:8082/api/auth/signup/employee';
+ private signupUrl1 = 'http://localhost:8082/api/auth/signIn';
+ private signupUrl2 = 'http://localhost:8082/api/auth/signup/entreprise';
  isconn: any=false;
 
   constructor(private http: HttpClient,private router:Router) { 

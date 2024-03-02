@@ -3,7 +3,7 @@
     <div class="logo">
       <a  class="simple-text navbar-brand mr-lg-5 " [routerLink]="['/landing']">
           <div class="logo-img">
-              <img src="../../../assets/images/logonav.png" >
+              <img  src="../../../assets/images/coconsult-logo.png" class="logo_img" >
           </div>
       </a>
     </div>
@@ -14,7 +14,7 @@
       <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
         <li class="nav-item dropdown">
           <a class="nav-link no-caret" data-toggle="dropdown" role="button">
-            <i class="fa fa-plug" aria-hidden="true"></i>
+            <i class="fa fa-user-plus" aria-hidden="true"></i>
             <span class="nav-link-inner--text text-black">S'inscrire </span>
           </a>
           <div class="dropdown-menu-xl dropdown-menu" >
@@ -43,7 +43,7 @@
         </li>
         <li class="nav-item dropdown" >
           <a class="nav-link no-caret" data-toggle="dropdown" role="button" routerLinkActive="active" [routerLink]="['/signin']">
-            <i class="fa fa-plug" aria-hidden="true"></i>
+            <i class="fa fa-sign-in" aria-hidden="true"></i>
             <span class="nav-link-inner--text text-black">Se Connecter </span>
           </a>
         </li>
@@ -73,12 +73,12 @@
         <li class="nav-item dropdown">
           <a class="nav-link no-caret" data-toggle="dropdown" role="button">
             <i class="fa fa-question" aria-hidden="true"></i>
-            <span class="nav-link-inner--text text-black">About us ? </span>
+            <span class="nav-link-inner--text text-black">About us  </span>
           </a>
           <div class="dropdown-menu-xl dropdown-menu" >
             <div class="dropdown-menu-inner">
             
-              <a routerLinkActive="active" [routerLink]="['/aboutus']" class="media d-flex align-items-center">
+              <a routerLinkActive="active" [routerLink]="['#']" class="media d-flex align-items-center">
                 <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
                   <i class="fa fa-question-circle" aria-hidden="true"></i>
                 </div>
@@ -134,8 +134,8 @@
         
       </ul>
        
-      
-    </div>
+     <p></p> 
+  </div>
 <ng-template #inconn>
     <div class="navbar-collapse collapse" id="navbar_global" [ngbCollapse]="isCollapsed" >
       

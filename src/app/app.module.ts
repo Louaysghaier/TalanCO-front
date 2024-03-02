@@ -26,7 +26,6 @@ import { calculmodel } from './calcul-dashboard/calcul.model';
 import { calculentrpmodel } from './calculentrp/calculetrp.model';
 import { AboutusComponent } from './shared/aboutus/aboutus.component';
 import { ContactComponent } from './shared/contact/contact.component';
-import { GoogleMapsModule } from '@angular/google-maps'; 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AboutDirective } from './shared/aboutus/about.directive';
 @NgModule({
@@ -47,7 +46,7 @@ import { AboutDirective } from './shared/aboutus/about.directive';
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 
-  imports: [GoogleMapsModule,
+  imports: [
     FlexLayoutModule,
     NgOtpInputModule,
     BrowserModule,
